@@ -676,6 +676,30 @@ img {
     pointer-events: none;
 }
 
+/* Foto real accesoria, tipo polaroid, sobre la imagen principal */
+.hero-photo-accent {
+    position: absolute;
+    top: 50%;
+    right: -36px;
+    transform: translateY(-50%) rotate(4deg);
+    width: 180px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+    z-index: 6;
+    opacity: 0;
+    transition: opacity .7s var(--ease-out) .2s, transform .3s ease;
+}
+.hero-photo-accent:hover { transform: translateY(-50%) rotate(0deg) scale(1.05); }
+.hero-visual.in .hero-photo-accent { opacity: 1; }
+.hero-photo-accent img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+}
+
 /* Chips flotantes */
 .hero-chip {
     position: absolute;
@@ -1471,6 +1495,7 @@ img {
     /* Hero chips solo top */
     .chip-bottom-left,
     .chip-bottom-right { display: none; }
+    .hero-photo-accent { display: none; }
     .chip-top-left  { left: -10px; top: -10px; }
     .chip-top-right { right: -10px; top: -10px; }
     .hero-chip { padding: 10px 12px; gap: 8px; }
